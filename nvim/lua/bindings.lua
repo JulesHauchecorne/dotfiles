@@ -48,8 +48,8 @@ vim.cmd("nnoremap <leader>ff gg=G''<CR>")
 keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
 -- Floating terminal
 keymap('n', 'T', "<cmd> lua require('FTerm').open()<CR>", opts)
--- Markdown preview 
-keymap('n' , '<leader>md' , ':MardownPreview' , opts)
+-- Markdown preview
+keymap('n' , '<leader>md' , ':MarkdownPreview<CR>' , opts)
 
 
 -- Debugging with vimspector
