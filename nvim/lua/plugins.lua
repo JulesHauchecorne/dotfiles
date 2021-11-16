@@ -3,7 +3,7 @@ return require('packer').startup(
     function(use)
 use 'wbthomason/packer.nvim'
 use 'davetron5000/java-javadoc-vim'
-use {'puremourning/vimspector',  cmd = './install_gadget.py --all'}
+use 'puremourning/vimspector'
 use {'junegunn/fzf.vim', run = '{-> fzf#install}'}
 use 'junegunn/fzf'
 use 'arcticicestudio/nord-vim'
@@ -26,11 +26,10 @@ use 'RishabhRD/nvim-cheat.sh'
 use 'onsails/lspkind-nvim'
 use 'RishabhRD/nvim-lsputils'
 use 'tyru/open-browser.vim'
-use 'weirongxu/plantuml-previewer.vim'
 use 'aklt/plantuml-syntax'
 use "numToStr/FTerm.nvim"
 use 'crusoexia/vim-monokai'
-
+use 'iamcco/markdown-preview.nvim'
 
 --use 'ThePrimeagen/harpoon'
     end

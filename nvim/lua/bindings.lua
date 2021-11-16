@@ -48,4 +48,12 @@ vim.cmd("nnoremap <leader>ff gg=G''<CR>")
 keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
 -- Floating terminal
 keymap('n', 'T', "<cmd> lua require('FTerm').open()<CR>", opts)
+-- Markdown preview 
+keymap('n' , '<leader>md' , ':MardownPreview' , opts)
+
+
+-- Debugging with vimspector
+--vim.cmd("nmap <Leader>Dw <Plug>VimspectorBalloonEval")
+--vim.cmd("nmap <Leader>Dl :call vimspector#Launch()")
 --keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
+

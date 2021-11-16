@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["nord-vim"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/nord-vim",
@@ -179,11 +184,6 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["plantuml-previewer.vim"] = {
-    loaded = true,
-    path = "/home/jules/.local/share/nvim/site/pack/packer/start/plantuml-previewer.vim",
-    url = "https://github.com/weirongxu/plantuml-previewer.vim"
-  },
   ["plantuml-syntax"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/plantuml-syntax",
@@ -230,22 +230,13 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/vim-vsnip"
   },
   vimspector = {
-    commands = { "./install_gadget.py --all" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/jules/.local/share/nvim/site/pack/packer/opt/vimspector",
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/vimspector",
     url = "https://github.com/puremourning/vimspector"
   }
 }
 
 time([[Defining packer_plugins]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined ./install_gadget.py --all ++once lua require"packer.load"({'vimspector'}, {}, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 if should_profile then save_profiles() end
 
 end)
