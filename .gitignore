@@ -3,7 +3,9 @@
 # except
 !/nvim
 !/alacritty
-
+!/fish
+!/i3
+!compton.conf
 
 !.gitignore
 
