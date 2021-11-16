@@ -22,6 +22,8 @@ vim.o.scrolloff = 8
 vim.o.updatetime = 50
 vim.o.signcolumn = "yes"
 vim.cmd( 'syntax on')
+--vim.cmd('colorscheme  gruvbox')
+--vim.cmd('colorscheme  nord')
 vim.cmd('colorscheme  monokai')
 vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear LineNr')

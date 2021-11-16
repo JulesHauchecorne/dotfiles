@@ -30,7 +30,5 @@ use 'aklt/plantuml-syntax'
 use "numToStr/FTerm.nvim"
 use 'crusoexia/vim-monokai'
 use 'iamcco/markdown-preview.nvim'
-
---use 'ThePrimeagen/harpoon'
     end
 )

@@ -18,10 +18,11 @@ keymap('n', '<leader>po', ':NvimTreeOpen<Enter><CR>', opts)
 keymap('n', 'tt', ':Telescope<CR>', opts)
 vim.cmd("nnoremap <leader><leader> <cmd>lua require('telescope.builtin').find_files()<cr>")
 vim.cmd("nnoremap <leader>tg <cmd>lua require('telescope.builtin').live_grep()<cr>")
-vim.cmd("nnoremap <leader>tw <cmd>lua require('telescope.builtin').grep_strings()<cr>")
+vim.cmd("nnoremap <leader>tw :Telescope grep_string<CR>")
 keymap('n', 'gr', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
 keymap('n', 'gi', "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", opts)
 keymap('n', '<leader>fv' ,"<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts )
+keymap('n', '<leader>/' , "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
 vim.cmd("nnoremap <leader>d <cmd> lua require('telescope-config.init').search_dotfiles()<CR>")
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
@@ -43,7 +44,7 @@ keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 keymap('n', 'gf', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 -- ez indent
-vim.cmd("nnoremap <leader>ff gg=G''<CR>")
+vim.cmd("nnoremap <leader>ff gg=G''")
 --java go fix
 keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
 -- Floating terminal
