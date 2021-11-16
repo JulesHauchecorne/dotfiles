@@ -5,7 +5,9 @@
 !/alacritty
 !/fish
 !/i3
+!/tmux
 !compton.conf
+
 
 !.gitignore
 
