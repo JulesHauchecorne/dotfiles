@@ -230,7 +230,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/vim-vsnip"
   },
   vimspector = {
-    commands = { "./install_gadget.py --enable-c --enable-python" },
+    commands = { "./install_gadget.py --all" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -243,7 +243,7 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined ./install_gadget.py --enable-c --enable-python ++once lua require"packer.load"({'vimspector'}, {}, _G.packer_plugins)]])
+pcall(vim.cmd, [[au CmdUndefined ./install_gadget.py --all ++once lua require"packer.load"({'vimspector'}, {}, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 if should_profile then save_profiles() end
