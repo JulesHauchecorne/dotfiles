@@ -12,9 +12,9 @@ require('telescope').setup {
 
 local M = {}
 M.search_dotfiles = function()
-    require("telescope.builtin").find_files({
-        prompt_title = "< VimRC >",
-        cwd = vim.env.nvim,
+    require("telescope.builtin").git_files({
+        prompt_title = "< Config Files >",
+        cwd = vim.env.config,
         hidden = true,
     })
 end

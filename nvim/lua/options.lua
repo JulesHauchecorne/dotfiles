@@ -1,6 +1,6 @@
 vim.cmd('let $nvim = "/home/jules/.config/nvim/"')
 vim.cmd('filetype plugin indent on')
-vim.env.nvim = "/home/jules/.config/nvim/"
+vim.env.config = "/home/jules/.config/"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.relativenumber = true
