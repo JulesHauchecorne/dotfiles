@@ -17,7 +17,19 @@
   require'lspconfig'.jedi_language_server.setup {
     capabilities = capabilities
   }
-  
+require'lspconfig'.pyright.setup{
+    capabilities = capabilities;
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = false,
+                diagnosticMode = 'workspace'
+            }
+        }
+
+    }
+}
   -- -----------------------------
   -- Lua language server config --
   --------------------------------

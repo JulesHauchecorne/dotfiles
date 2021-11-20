@@ -4,7 +4,7 @@ vim.env.config = "/home/jules/.config/"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.relativenumber = true
---vim.o.number = true
+vim.o.number = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.autoindent = true
@@ -29,3 +29,5 @@ vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear LineNr')
 vim.cmd('highlight clear SignColumn')
 vim.cmd("let g:mkdp_filetypes = ['markdown', 'plantuml']")
+--vim.cmd("let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python3' ")
+
