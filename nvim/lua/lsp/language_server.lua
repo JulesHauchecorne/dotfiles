@@ -14,6 +14,9 @@
   require'lspconfig'.html.setup {
     capabilities = capabilities
   }
+  require'lspconfig'.vuels.setup {
+    capabilities = capabilities
+  }
   require'lspconfig'.jedi_language_server.setup {
     capabilities = capabilities
   }
