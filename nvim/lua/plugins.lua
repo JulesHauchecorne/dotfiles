@@ -32,6 +32,7 @@ use 'crusoexia/vim-monokai'
 use 'iamcco/markdown-preview.nvim'
 use 'psf/black'
 use 'tami5/lspsaga.nvim'
-use "ray-x/lsp_signature.nvim"
+use 'ray-x/lsp_signature.nvim'
+
         end
 )
