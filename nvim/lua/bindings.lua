@@ -24,7 +24,11 @@ keymap('n', 'gi', "<cmd>lua require('telescope.builtin').lsp_implementations()<c
 keymap('n', '<leader>fv' ,"<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts )
 keymap('n', '<leader>/' , "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
 vim.cmd("nnoremap <leader>d <cmd> lua require('telescope-config.init').search_dotfiles()<CR>")
+vim.cmd("nnoremap gf <cmd> lua require('telescope.builtin').lsp_code_actions( { layout_strategy = 'cursor',  layout_config = { cursor = { width = 0.4, height = 0.2 }} })<CR>")
 keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').command_history()<cr>", opts)
+keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", opts)
+keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>", opts)
+--keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
 keymap('n', '<leader>rg', ':Rg <space><CR>', opt)
@@ -41,21 +45,14 @@ keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
---keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 --keymap('n', 'gf', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-
---keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
--- lsp saga
-keymap('n', '<leader>nn', "<cmd>lua require('lspsaga.rename').rename()<CR>", opts)
-keymap( "n", "gf", "<cmd>Lspsaga code_action<cr>", opts)
-keymap( "n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
-keymap( "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-keymap( "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-
+-- show error in wrap
+keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 -- ez indent
 vim.cmd("nnoremap <leader>ff gg=G''")
 --java go fix
-keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
+--keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
 -- Floating terminal
 keymap('n', 'T', "<cmd> lua require('FTerm').open()<CR>", opts)
 -- Markdown preview

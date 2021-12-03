@@ -19,4 +19,14 @@ M.search_dotfiles = function()
         hidden = true,
     })
 end
+
+--M.go_fix = function()
+--    require("telescope.builtin").lsp_code_actions({
+--        layout_config = {
+--            width = 0.2
+--        }
+--    })
+--end
+
 return M
+
