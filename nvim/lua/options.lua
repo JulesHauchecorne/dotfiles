@@ -22,14 +22,14 @@ vim.o.scrolloff = 8
 vim.o.updatetime = 50
 vim.o.signcolumn = "yes"
 vim.cmd( 'syntax on')
-vim.cmd('colorscheme  gruvbox')
+--vim.cmd('colorscheme  gruvbox')
 --vim.cmd('colorscheme  nord')
---vim.cmd('colorscheme  monokai')
+vim.cmd('colorscheme  monokai')
 vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear LineNr')
 vim.cmd('highlight clear SignColumn')
 vim.cmd("let g:mkdp_filetypes = ['markdown', 'plantuml']")
+vim.cmd("let test#strategy = 'basic'")
 
 --vim.cmd("let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python3' ")
---vim.cmd("set wildmenu")
 

@@ -23,9 +23,10 @@ keymap('n', 'gr', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", 
 keymap('n', 'gi', "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", opts)
 keymap('n', '<leader>fv' ,"<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts )
 keymap('n', '<leader>/' , "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
-vim.cmd("nnoremap <leader>d <cmd> lua require('telescope-config.init').search_dotfiles()<CR>")
+vim.cmd("nnoremap <leader>c <cmd> lua require('telescope-config.init').search_dotfiles()<CR>")
 vim.cmd("nnoremap gf <cmd> lua require('telescope.builtin').lsp_code_actions( { layout_strategy = 'cursor',  layout_config = { cursor = { width = 0.4, height = 0.2 }} })<CR>")
-keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').command_history()<cr>", opts)
+keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').commands()<cr>", opts)
+keymap('n', '<leader>:', "<cmd>lua require('telescope.builtin').command_history()<cr>", opts)
 keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", opts)
 keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>", opts)
 --keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
@@ -36,7 +37,7 @@ keymap('n', '<leader>rg', ':Rg <space><CR>', opt)
 keymap('n', '<leader>x', ':wqa<CR>', opts)
 keymap('n', '<leader>q', ':q<CR>', opts)
 -- Cheat.sh
-keymap('n', '<leader>c', ':Cheat<CR>', opt)
+keymap('n', '<leader>C', ':Cheat<CR>', opt)
 -- eazy get rid of highlight
 keymap('n', '//', ':noh<CR>', opt)
 -- Lsp builtin stuff
@@ -49,6 +50,8 @@ keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 --keymap('n', 'gf', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 -- show error in wrap
 keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+-- show git blame per line
+keymap('n', '<leader>gb',  ":ToggleBlameLine<CR>", opts)
 -- ez indent
 vim.cmd("nnoremap <leader>ff gg=G''")
 --java go fix
@@ -61,8 +64,30 @@ keymap('n' , '<leader>md' , ':MarkdownPreview<CR>' , opts)
 -- emmet leader key pour le html completion
 vim.cmd("let g:user_emmet_leader_key=',' ")
 
--- Debugging with vimspector
---vim.cmd("nmap <Leader>Dw <Plug>VimspectorBalloonEval")
---vim.cmd("nmap <Leader>Dl :call vimspector#Launch()")
---keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
+-- Dab debbuger
+keymap('n', '<leader>dd', "<cmd> lua require('dapui').toggle()<CR>", opts)
+keymap('n', '<leader>dq', "<cmd> lua require('dap').terminate()<CR>", opts)
+vim.cmd("nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>" )
+vim.cmd("nnoremap <silent> <leader>so :lua require'dap'.step_over()<CR>")
+vim.cmd("nnoremap <silent> <leader>si :lua require'dap'.step_into()<CR>")
+vim.cmd("nnoremap <silent> <leader>ss :lua require'dap'.step_out()<CR>")
+vim.cmd("nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>")
+vim.cmd("nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+vim.cmd("nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+vim.cmd("nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>")
+vim.cmd("nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>")
+vim.cmd("vnoremap <leader>dve <Cmd>lua require('dapui').eval()<CR>")
+vim.cmd("nnoremap <leader>de <Cmd>lua require('dapui').eval()<CR>")
+keymap('n', '<leader>dv', "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", opts)
+keymap('n', '<leader>dx', "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>", opts)
+
+-- vim-test to run test methods
+keymap('n', '<leader>rt', ':TestNearest<CR>', opts)
+keymap('n', '<leader>rft', ':TestNearest<CR>', opts)
+
+--nmap <silent> t<C-n> :TestNearest<CR>
+--nmap <silent> t<C-f> :TestFile<CR>
+--nmap <silent> t<C-s> :TestSuite<CR>
+--nmap <silent> t<C-l> :TestLast<CR>
+--nmap <silent> t<C-g> :TestVisit<CR>
 
