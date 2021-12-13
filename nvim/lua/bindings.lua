@@ -29,12 +29,13 @@ keymap('n', 'gr', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", 
 keymap('n', 'gi', "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", opts)
 keymap('n', '<leader>fv' ,"<cmd>lua require('telescope.builtin').oldfiles()<cr>", opts )
 keymap('n', '<leader>/' , "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
-vim.cmd("nnoremap <leader>c <cmd> lua require('telescope-config.init').search_dotfiles()<CR>")
-vim.cmd("nnoremap gf <cmd> lua require('telescope.builtin').lsp_code_actions( { layout_strategy = 'cursor',  layout_config = { cursor = { width = 0.4, height = 0.2 }} })<CR>")
-keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').commands()<cr>", opts)
-keymap('n', '<leader>:', "<cmd>lua require('telescope.builtin').command_history()<cr>", opts)
+keymap('n', '<leader>c', "<cmd> lua require('telescope-config.init').search_dotfiles( )<CR>" , opts)
+keymap('n',  'gf',  "<cmd> lua require('telescope.builtin').lsp_code_actions( { layout_strategy = 'cursor',  layout_config = { cursor = { width = 0.4, height = 0.2 }} })<CR>", opts)
+keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').commands(require('telescope.themes').get_dropdown({}) )<cr>", opts)
+keymap('n', '<leader>:', "<cmd>lua require('telescope.builtin').command_history(require('telescope.themes').get_dropdown({}) )<cr>", opts)
 keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
-keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
+keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').diagnostics( { bufnr=0 } )<cr>", opts)
+keymap('n', '<leader>fb' ,  "<cmd>lua require('telescope.builtin').buffers( {layout_config = { height = 0.4 } })<CR>" , opts )
 --keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
@@ -66,10 +67,8 @@ vim.cmd("nnoremap <leader>ff gg=G''")
 keymap('n', 'T', "<cmd> lua require('FTerm').open()<CR>", opts)
 -- Markdown preview
 keymap('n' , '<leader>md' , ':MarkdownPreview<CR>' , opts)
-
 -- emmet leader key pour le html completion
 vim.cmd("let g:user_emmet_leader_key=',' ")
-
 -- Dab debbuger
 keymap('n', '<leader>dd', "<cmd> lua require('dapui').toggle()<CR>", opts)
 keymap('n', '<leader>dq', "<cmd> lua require('dap').terminate()<CR>", opts)
@@ -86,15 +85,10 @@ vim.cmd("nnoremap <leader>de <Cmd>lua require('dapui').eval()<CR>")
 keymap('n', '<leader>dv', "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", opts)
 keymap('n', '<leader>dfb', "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>", opts)
 keymap('n', '<leader>dx', "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>", opts)
-
 -- vim-test and ultest to run test methods
 keymap('n', '<leader>rtf', ":Ultest<CR>", opts)
 keymap('n', '<leader>rt', ":UltestNearest<CR>", opts)
 keymap('n', '<leader>rts', ":UltestSummary<CR>", opts)
---keymap('n', '<leader>rt', ':TestNearest<CR>', opts)
---keymap('n', '<leader>rft', ':TestFile<CR>', opts)
---nmap <silent> t<C-s> :TestSuite<CR>
-
 -- run partial code wiht sniprun
 keymap('n', '<leader>sc', ":SnipClose<CR>", opts)
 keymap('n', '<leader>sr', "<cmd> lua require'sniprun'.run()<CR>", opts)
