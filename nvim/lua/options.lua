@@ -29,7 +29,7 @@ vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear LineNr')
 vim.cmd('highlight clear SignColumn')
 vim.cmd("let g:mkdp_filetypes = ['markdown', 'plantuml']")
-vim.cmd("let test#strategy = 'basic'")
-
+vim.cmd("let test#strategy = 'neovim'")
+vim.cmd("let test#python#pytest#options = '--color=yes'")
 --vim.cmd("let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python3' ")
 

@@ -36,5 +36,7 @@ use 'nvim-telescope/telescope-dap.nvim'
 use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 use 'vim-test/vim-test'
 use 'tveskag/nvim-blame-line'
+use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
         end
 )

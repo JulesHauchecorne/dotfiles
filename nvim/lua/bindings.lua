@@ -3,6 +3,10 @@ vim.g.mapleader = " "
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true }
 local opts = { noremap = true, silent = true }
+-- yank to clipboard and yank all file
+vim.cmd('nnoremap <leader>y "+y')
+vim.cmd('vnoremap <leader>y "+y')
+vim.cmd('nnoremap <leader>Y gg"+yG')
 -- Who would ever reach so far as Esc...
 keymap('i', 'jj' , '<Esc>', {} )
 keymap('i', 'kk' , '<Esc>', {} )
@@ -11,6 +15,8 @@ keymap('n', '<leader>h', ':wincmd h<CR>', opts )
 keymap('n', '<leader>l', ':wincmd l<CR>', opts )
 keymap('n', '<leader>k', ':wincmd k<CR>', opts )
 keymap('n', '<leader>j', ':wincmd j<CR>', opts )
+keymap('n', '<leader>+' , ':vertical resize +5<CR>', opts)
+keymap('n', '<leader>-' , ':vertical resize -5<CR>', opts)
 -- Nvim
 keymap('n', '<leader>pv', ':NvimTreeFindFile<Enter><CR>', opts)
 keymap('n', '<leader>po', ':NvimTreeOpen<Enter><CR>', opts)
@@ -27,8 +33,8 @@ vim.cmd("nnoremap <leader>c <cmd> lua require('telescope-config.init').search_do
 vim.cmd("nnoremap gf <cmd> lua require('telescope.builtin').lsp_code_actions( { layout_strategy = 'cursor',  layout_config = { cursor = { width = 0.4, height = 0.2 }} })<CR>")
 keymap('n', '<leader>;', "<cmd>lua require('telescope.builtin').commands()<cr>", opts)
 keymap('n', '<leader>:', "<cmd>lua require('telescope.builtin').command_history()<cr>", opts)
-keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", opts)
-keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>", opts)
+keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
+keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
 --keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
@@ -76,18 +82,22 @@ vim.cmd("nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.inp
 vim.cmd("nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 vim.cmd("nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>")
 vim.cmd("nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>")
-vim.cmd("vnoremap <leader>dve <Cmd>lua require('dapui').eval()<CR>")
 vim.cmd("nnoremap <leader>de <Cmd>lua require('dapui').eval()<CR>")
 keymap('n', '<leader>dv', "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", opts)
+keymap('n', '<leader>dfb', "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>", opts)
 keymap('n', '<leader>dx', "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>", opts)
 
--- vim-test to run test methods
-keymap('n', '<leader>rt', ':TestNearest<CR>', opts)
-keymap('n', '<leader>rft', ':TestNearest<CR>', opts)
-
---nmap <silent> t<C-n> :TestNearest<CR>
---nmap <silent> t<C-f> :TestFile<CR>
+-- vim-test and ultest to run test methods
+keymap('n', '<leader>rtf', ":Ultest<CR>", opts)
+keymap('n', '<leader>rt', ":UltestNearest<CR>", opts)
+keymap('n', '<leader>rts', ":UltestSummary<CR>", opts)
+--keymap('n', '<leader>rt', ':TestNearest<CR>', opts)
+--keymap('n', '<leader>rft', ':TestFile<CR>', opts)
 --nmap <silent> t<C-s> :TestSuite<CR>
---nmap <silent> t<C-l> :TestLast<CR>
---nmap <silent> t<C-g> :TestVisit<CR>
+
+-- run partial code wiht sniprun
+keymap('n', '<leader>sc', ":SnipClose<CR>", opts)
+keymap('n', '<leader>sr', "<cmd> lua require'sniprun'.run()<CR>", opts)
+keymap('v', '<C-r>', ":SnipRun<CR>", opts)
+
 

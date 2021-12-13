@@ -229,6 +229,11 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  sniprun = {
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/sniprun",
+    url = "https://github.com/michaelb/sniprun"
+  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
@@ -258,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
+  },
+  ["vim-ultest"] = {
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/vim-ultest",
+    url = "https://github.com/rcarriga/vim-ultest"
   },
   ["vim-vsnip"] = {
     loaded = true,
