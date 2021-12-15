@@ -56,7 +56,7 @@ keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 --keymap('n', 'gf', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 -- show error in wrap
-keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 -- show git blame per line
 keymap('n', '<leader>gb',  ":ToggleBlameLine<CR>", opts)
 -- ez indent
