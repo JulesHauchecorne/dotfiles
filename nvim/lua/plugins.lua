@@ -37,5 +37,7 @@ use 'tveskag/nvim-blame-line'
 use { 'michaelb/sniprun', run = 'bash ./install.sh'}
 use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 use { "ray-x/lsp_signature.nvim", }
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'terrortylor/nvim-comment'
         end
 )

@@ -61,7 +61,8 @@ keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 -- show git blame per line
 keymap('n', '<leader>gb',  ":ToggleBlameLine<CR>", opts)
 -- ez indent
-vim.cmd("nnoremap <leader>ff gg=G''")
+--vim.cmd("nnoremap <leader>ff gg=G''")
+keymap('n' , '<leader>ff', "<cmd>lua vim.lsp.buf.formatting()<CR>" , opts)
 --java go fix
 --keymap('n', '<leader>gf', "<cmd>lua require('jdtls').code_action()<cr>", opts)
 -- Floating terminal
