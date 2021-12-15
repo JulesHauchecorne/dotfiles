@@ -1,25 +1,33 @@
+require "lsp_signature".setup({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+        border = "rounded"
+    },
+    transparency = 0,
+    shadow_blend = 36,
+})
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require'lspconfig'.clangd.setup {
+    capabilities = capabilities,
+}
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require'lspconfig'.clangd.setup {
+require'lspconfig'.tsserver.setup {
     capabilities = capabilities
-  }
-  require'lspconfig'.tsserver.setup {
+}
+require'lspconfig'.jdtls.setup {
     capabilities = capabilities
-  }
-  require'lspconfig'.jdtls.setup {
+}
+require'lspconfig'.html.setup {
     capabilities = capabilities
-  }
-  require'lspconfig'.html.setup {
+}
+require'lspconfig'.vuels.setup {
     capabilities = capabilities
-  }
-  require'lspconfig'.vuels.setup {
+}
+require'lspconfig'.jedi_language_server.setup {
     capabilities = capabilities
-  }
-  require'lspconfig'.jedi_language_server.setup {
-    capabilities = capabilities
-  }
+}
 require'lspconfig'.pyright.setup{
     capabilities = capabilities;
     settings = {
@@ -33,17 +41,17 @@ require'lspconfig'.pyright.setup{
 
     }
 }
-  -- -----------------------------
-  -- Lua language server config --
-  --------------------------------
+-- -----------------------------
+-- Lua language server config --
+--------------------------------
 local sumneko_root_path = vim.fn.stdpath('cache')..'/nvim-lsp/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/".."Linux".."/lua-language-server"
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-  require'lspconfig'.sumneko_lua.setup {
-cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+require'lspconfig'.sumneko_lua.setup {
+    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
 
         Lua = {
@@ -69,4 +77,4 @@ cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
         },
     },
     capabilities = capabilities
-  }
+}

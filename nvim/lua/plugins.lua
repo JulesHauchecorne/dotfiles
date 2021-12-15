@@ -2,11 +2,10 @@
 return require('packer').startup(
     function(use)
 use 'wbthomason/packer.nvim'
-use 'davetron5000/java-javadoc-vim'
 use {'junegunn/fzf.vim', run = '{-> fzf#install}'}
 use 'junegunn/fzf'
 use 'arcticicestudio/nord-vim'
-use 'morhetz/gruvbox'
+use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 use 'tpope/vim-fugitive'
 use 'jiangmiao/auto-pairs'
 use 'mattn/emmet-vim'
@@ -29,7 +28,6 @@ use 'aklt/plantuml-syntax'
 use "numToStr/FTerm.nvim"
 use 'crusoexia/vim-monokai'
 use 'iamcco/markdown-preview.nvim'
-use 'psf/black'
 use 'mfussenegger/nvim-dap'
 use "Pocco81/DAPInstall.nvim"
 use 'nvim-telescope/telescope-dap.nvim'
@@ -38,5 +36,6 @@ use 'vim-test/vim-test'
 use 'tveskag/nvim-blame-line'
 use { 'michaelb/sniprun', run = 'bash ./install.sh'}
 use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+use { "ray-x/lsp_signature.nvim", }
         end
 )

@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  black = {
-    loaded = true,
-    path = "/home/jules/.local/share/nvim/site/pack/packer/start/black",
-    url = "https://github.com/psf/black"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -119,20 +114,25 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
-  gruvbox = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/jules/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["java-javadoc-vim"] = {
+  ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/home/jules/.local/share/nvim/site/pack/packer/start/java-javadoc-vim",
-    url = "https://github.com/davetron5000/java-javadoc-vim"
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,

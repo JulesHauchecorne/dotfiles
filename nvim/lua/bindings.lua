@@ -36,6 +36,7 @@ keymap('n', '<leader>:', "<cmd>lua require('telescope.builtin').command_history(
 keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
 keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').diagnostics( { bufnr=0 } )<cr>", opts)
 keymap('n', '<leader>fb' ,  "<cmd>lua require('telescope.builtin').buffers( {layout_config = { height = 0.4 } })<CR>" , opts )
+keymap('n', '<leader>fs' ,  "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>" , opts )
 --keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
