@@ -1,0 +1,67 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+
+format = """ $directory$git_branch$git_status$battery$character """ 
+[character]
+success_symbol = "[\\)](bold green)"
+error_symbol = "[✗](bold red) "
+[cmd_duration]
+disabled = true
+
+
+
+## Use custom format
+#format = """
+#[┌───────────────────>](bold blue)
+#[│](bold blue)$directory$git_branch$git_status$battery
+#[└─>](bold blue) """
+#
+## Wait 10 milliseconds for starship to check files under the current directory.
+#scan_timeout = 10
+#
+### Disable the blank line at the start of the prompt
+#add_newline = false
+
+## Replace the "❯" symbol in the prompt with "➜"
+#[character]                            # The name of the module we are configuring is "character"
+#success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+#[package]
+#disabled = true
+
+
+[git_status]
+up_to_date = "[✓](bold green)"
+conflicted = " [](bold red)"
+deleted = "[﫧](bold red)"
+modified = " [](bold red)"
+stashed = " [ ](bold red)"
+staged = " []( bold yellow )"
+renamed = "  "
+untracked = "[](bold red)"
+style = "bold green"
+
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+#[git_status]
+#conflicted = "🏳"
+#ahead = "🏎💨"
+#behind = "😰"
+#diverged = "😵"
+#up_to_date = "✓"
+#untracked = "🤷‍"
+#stashed = "📦"
+#modified = "📝"
+#staged = '[++\($count\)](green)'
+#renamed = "👅"
+#deleted = "🗑"

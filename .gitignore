@@ -7,7 +7,7 @@
 !/i3
 !/tmux
 !compton.conf
-!starfish.toml
+!starship.toml
 
 
 !.gitignore
