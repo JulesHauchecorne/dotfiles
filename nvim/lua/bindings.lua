@@ -37,6 +37,8 @@ keymap('n', '<leader>erw', "<cmd>lua require('telescope.builtin').diagnostics()<
 keymap('n', '<leader>erd', "<cmd>lua require('telescope.builtin').diagnostics( { bufnr=0 } )<cr>", opts)
 keymap('n', '<leader>fb' ,  "<cmd>lua require('telescope.builtin').buffers( {layout_config = { height = 0.4 } })<CR>" , opts )
 keymap('n', '<leader>fs' ,  "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>" , opts )
+keymap('n',  '<leader>B' , "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<CR>",opts )
+keymap('n', '<leader>z', "<cmd>lua require'telescope'.extensions.zoxide.list{}<CR>", opts)
 --keymap ( 'n', 'gf',  "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", opts)
 -- Cant drop fzf or Rg yet <_<
 keymap('n', '<leader>fzf', ":FZF --reverse<CR>", opts)
@@ -79,7 +81,7 @@ vim.cmd("nnoremap <silent> <leader>so :lua require'dap'.step_over()<CR>")
 vim.cmd("nnoremap <silent> <leader>si :lua require'dap'.step_into()<CR>")
 vim.cmd("nnoremap <silent> <leader>ss :lua require'dap'.step_out()<CR>")
 vim.cmd("nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>")
-vim.cmd("nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+-- vim.cmd("nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
 vim.cmd("nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 vim.cmd("nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>")
 vim.cmd("nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>")
@@ -95,5 +97,8 @@ keymap('n', '<leader>rts', ":UltestSummary<CR>", opts)
 keymap('n', '<leader>sc', ":SnipClose<CR>", opts)
 keymap('n', '<leader>sr', "<cmd> lua require'sniprun'.run()<CR>", opts)
 keymap('v', '<C-r>', ":SnipRun<CR>", opts)
+-- macro usage
+keymap('n', 'gq', 'qa' , opts)
+keymap('n', '..', '@a', opts)
 
 

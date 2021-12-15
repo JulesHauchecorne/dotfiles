@@ -39,5 +39,7 @@ use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRem
 use { "ray-x/lsp_signature.nvim", }
 use 'jose-elias-alvarez/null-ls.nvim'
 use 'terrortylor/nvim-comment'
+use 'dhruvmanila/telescope-bookmarks.nvim'
+use 'jvgrootveld/telescope-zoxide'
         end
 )

@@ -74,6 +74,8 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
+focus_follows_mouse no
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -183,8 +185,8 @@ bar {
         status_command i3status
 }
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 0
-
+for_window [class=".*"] border pixel 3
+set $border-color #ff000050
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
@@ -199,6 +201,9 @@ smart_borders on
 
 gaps inner 25
 #gaps outer 20
+
+# rounder corne
+#border_radius 30
 
 # brave launch config
 bindsym $mod+b exec --no-startup-id brave-browser --show-app-list 

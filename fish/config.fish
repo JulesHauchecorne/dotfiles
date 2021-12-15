@@ -1,4 +1,5 @@
 starship init fish | source
+zoxide init fish | source
 function fish_greeting
 end
 fish_vi_key_bindings

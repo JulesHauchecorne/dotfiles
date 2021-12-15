@@ -15,7 +15,6 @@ vim.o.swapfile = false
 vim.nobackup = true
 vim.o.undofile = true
 vim.o.errorbells = false
-vim.cmd('set statusline=%f')
 vim.o.termguicolors = true
 vim.o.incsearch = true
 vim.o.scrolloff = 8
@@ -25,6 +24,8 @@ vim.cmd( 'syntax on')
 vim.cmd('colorscheme  gruvbox')
 --vim.cmd('colorscheme  nord')
 --vim.cmd('colorscheme  monokai')
+vim.cmd('hi statusline guibg=NONE gui=NONE')
+vim.cmd('hi statusline ctermbg=NONE cterm=NONE')
 vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear NormalFloat')
 vim.cmd('highlight clear LineNr')
