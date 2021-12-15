@@ -34,13 +34,13 @@ disabled = true
 
 [git_status]
 up_to_date = "[✓](bold green)"
-conflicted = " [](bold red)"
+conflicted = " [ ](bold red)"
 deleted = "[﫧](bold red)"
-modified = " [](bold red)"
+modified = " [ ](bold red)"
 stashed = " [ ](bold red)"
-staged = " []( bold yellow )"
+staged = " [ ]( bold yellow )"
 renamed = "  "
-untracked = "[](bold red)"
+untracked = "[ ](bold red)"
 style = "bold green"
 
 
