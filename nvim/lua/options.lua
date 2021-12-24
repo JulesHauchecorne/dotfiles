@@ -26,6 +26,7 @@ vim.cmd('colorscheme  gruvbox')
 --vim.cmd('colorscheme  monokai')
 vim.cmd('hi statusline guibg=NONE gui=NONE')
 vim.cmd('hi statusline ctermbg=NONE cterm=NONE')
+vim.cmd('hi Pmenu guibg=NONE gui=NONE')
 vim.cmd('hi normal guibg=NONE ctermbg=NONE')
 vim.cmd('highlight clear NormalFloat')
 vim.cmd('highlight clear LineNr')
@@ -35,4 +36,5 @@ vim.cmd("let test#strategy = 'neovim'")
 vim.cmd("let test#python#pytest#options = '--color=yes'")
 vim.o.wildmenu = true
 --vim.cmd("let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python3' ")
+
 
