@@ -10,7 +10,6 @@ error_symbol = "[✗](bold red) "
 disabled = true
 
 
-
 ## Use custom format
 #format = """
 #[┌───────────────────>](bold blue)

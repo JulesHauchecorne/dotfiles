@@ -7,6 +7,7 @@ require('telescope').setup {
       override_file_sorter = true,     -- override the file sorter
       case_mode = "ignore_case",        -- or "ignore_case" or "respect_case"
     },
+    prompt_prefix = '' ,
     bookmarks = {
       -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
       selected_browser = 'brave',

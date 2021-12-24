@@ -244,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
+  ["tabline-framework.nvim"] = {
+    loaded = true,
+    path = "/home/jules/.local/share/nvim/site/pack/packer/start/tabline-framework.nvim",
+    url = "https://github.com/rafcamlet/tabline-framework.nvim"
+  },
   ["telescope-bookmarks.nvim"] = {
     loaded = true,
     path = "/home/jules/.local/share/nvim/site/pack/packer/start/telescope-bookmarks.nvim",

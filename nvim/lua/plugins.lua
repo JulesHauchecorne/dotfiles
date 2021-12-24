@@ -41,5 +41,6 @@ use 'jose-elias-alvarez/null-ls.nvim'
 use 'terrortylor/nvim-comment'
 use 'dhruvmanila/telescope-bookmarks.nvim'
 use 'jvgrootveld/telescope-zoxide'
+use { "rafcamlet/tabline-framework.nvim",  requires = "kyazdani42/nvim-web-devicons" }
         end
 )

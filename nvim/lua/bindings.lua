@@ -22,7 +22,7 @@ keymap('n', '<leader>pv', ':NvimTreeFindFile<Enter><CR>', opts)
 keymap('n', '<leader>po', ':NvimTreeOpen<Enter><CR>', opts)
 -- Telescope stuff <3
 keymap('n', 'tt', ':Telescope<CR>', opts)
-vim.cmd("nnoremap <leader><leader> <cmd>lua require('telescope.builtin').find_files()<cr>")
+vim.cmd("nnoremap <leader><leader> <cmd>lua require('telescope.builtin').find_files( )<cr>")
 vim.cmd("nnoremap <leader>tg <cmd>lua require('telescope.builtin').live_grep()<cr>")
 vim.cmd("nnoremap <leader>fw :Telescope grep_string<CR>")
 keymap('n', 'gr', "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
@@ -100,5 +100,6 @@ keymap('v', '<C-r>', ":SnipRun<CR>", opts)
 -- macro usage
 keymap('n', 'gq', 'qa' , opts)
 keymap('n', '..', '@a', opts)
+
 
 
