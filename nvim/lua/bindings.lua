@@ -53,13 +53,13 @@ keymap('n', '//', ':noh<CR>', opt)
 -- Lsp builtin stuff
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 --keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+--keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover({ border = "single" })<CR>', opts)
 keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 keymap('n', '<leader>nn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 --keymap('n', 'gf', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 -- show error in wrap
-keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float({ border = "single" })<CR>', opts)
 -- show git blame per line
 keymap('n', '<leader>gb',  ":ToggleBlameLine<CR>", opts)
 -- ez indent

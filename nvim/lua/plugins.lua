@@ -1,4 +1,3 @@
-
 return require('packer').startup(
     function(use)
 use 'wbthomason/packer.nvim'
@@ -42,5 +41,6 @@ use 'terrortylor/nvim-comment'
 use 'dhruvmanila/telescope-bookmarks.nvim'
 use 'jvgrootveld/telescope-zoxide'
 use { "rafcamlet/tabline-framework.nvim",  requires = "kyazdani42/nvim-web-devicons" }
+use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
         end
 )
